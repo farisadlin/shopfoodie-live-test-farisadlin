@@ -8,8 +8,9 @@ import { HeaderSearchBar } from "@/components/molecules/HeaderSearchBar";
 import { UserProfile } from "@/components/molecules/UserProfile";
 import { CreatePostDialog } from "@/components/molecules/CreatePostDialog";
 import { MOCK_POSTS } from "@/constants/posts";
-import { CreatePostData } from "@/types";
+import { CreatePostFormData } from "@/types";
 import { Plus } from "lucide-react";
+import { generateInitials } from "@/utils/string";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,7 +24,7 @@ export default function Home() {
     // Add logout logic here
   };
 
-  const handleCreatePost = (data: CreatePostData) => {
+  const handleCreatePost = (data: CreatePostFormData) => {
     console.log("Creating post with data:", data);
     // Add post creation logic here
   };
@@ -37,7 +38,7 @@ export default function Home() {
           <UserProfile
             name="John Doe"
             role="Admin"
-            initials="JD"
+            initials={generateInitials("John Doe")}
             onLogout={handleLogout}
           />
         </div>

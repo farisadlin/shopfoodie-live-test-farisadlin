@@ -10,13 +10,13 @@ export interface Post {
 // Create Post Dialog types
 export interface CreatePostDialogProps {
   children: React.ReactNode;
-  onSave?: (data: CreatePostData) => void;
+  onSave?: (data: CreatePostFormData) => void;
 }
 
-export interface CreatePostData {
+export interface CreatePostFormData {
   title: string;
   brandTone: string;
   platforms: string[];
-  imagePrompt: string;
-  scheduledAt: string;
+  imagePrompt?: string;
+  scheduledAt?: string;
 }
