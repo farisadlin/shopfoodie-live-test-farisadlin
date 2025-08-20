@@ -6,7 +6,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { PostsTable } from "@/components/molecules/PostsTable";
 import { HeaderSearchBar } from "@/components/molecules/HeaderSearchBar";
 import { UserProfile } from "@/components/molecules/UserProfile";
+import { CreatePostDialog } from "@/components/molecules/CreatePostDialog";
 import { MOCK_POSTS } from "@/constants/posts";
+import { CreatePostData } from "@/types";
 import { Plus } from "lucide-react";
 
 export default function Home() {
@@ -19,6 +21,11 @@ export default function Home() {
   const handleLogout = () => {
     console.log("Logging out...");
     // Add logout logic here
+  };
+
+  const handleCreatePost = (data: CreatePostData) => {
+    console.log("Creating post with data:", data);
+    // Add post creation logic here
   };
 
   return (
@@ -48,13 +55,15 @@ export default function Home() {
           </div>
 
           {/* Create Button */}
-          <Button
-            className="rounded-xl bg-blue-600 hover:bg-blue-700 text-white"
-            size="sm"
-          >
-            <Plus className="w-4 h-4 mr-1" />
-            Create Content
-          </Button>
+          <CreatePostDialog onSave={handleCreatePost}>
+            <Button
+              className="rounded-xl bg-blue-600 hover:bg-blue-700 text-white"
+              size="sm"
+            >
+              <Plus className="w-4 h-4 mr-1" />
+              Create Content
+            </Button>
+          </CreatePostDialog>
         </section>
 
         {/* Card */}

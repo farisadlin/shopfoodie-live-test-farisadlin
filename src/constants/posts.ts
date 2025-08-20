@@ -1,4 +1,4 @@
-import { Post } from '@/types/posts';
+import { Post } from '@/types';
 
 export const MOCK_POSTS: Post[] = [
   { id: 1, title: 'Post 1', platforms: ['IG', 'X'], scheduledAt: 'Aug 20, 09:00', status: 'scheduled' },

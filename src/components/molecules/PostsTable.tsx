@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Post } from '@/types/posts';
+import { Post } from '@/types';
 
 interface PostsTableProps {
   posts: Post[];
